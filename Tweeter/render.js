@@ -17,5 +17,5 @@ const Renderer = function(){
         }
     }
 
-    return {renderPosts: renderPosts}
+    return {renderPosts}
 }

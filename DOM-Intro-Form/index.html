@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"> 
+</head>
+<body>
+
+    <div id="container">
+        <div id="form">
+            <div class="main">
+                <div>Name</div>
+                <input type="text" placeholder="Type your name" id="name">
+            </div>
+            <div class="main">
+                <div class="secondLine">
+                    <div>Desired Salary</div>
+                    <input type="number" placeholder="Salary" id="desired-salary" class="input">
+                </div>
+                <div class="secondLine">
+                    <div>Birthday</div>
+                    <input type="date" id="birthday" class="input">
+                </div>
+            </div>
+            <div class="main">
+                <div>Phone</div>
+                <input type="number" placeholder="Type your phone number" id="phone" class="input">
+            </div>
+            <button id="button" onclick="validate()">Submit</button>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

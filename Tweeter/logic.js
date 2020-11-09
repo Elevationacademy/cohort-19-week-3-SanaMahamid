@@ -1,5 +1,5 @@
 const Tweeter = function(){
-    const posts = [
+    const _posts = [
         {
             text: "First post!",
             id: "p1",
@@ -26,20 +26,20 @@ const Tweeter = function(){
     let nextCommentId = 7
     
     const getPosts = function(){
-        return posts
+        return _posts
     }
 
     const addPost = function(text){
         postIdCounter++
         const comments = []
         let newPost = {text: text, id: "p" + nextPostId,comments: comments}
-        posts.push(newPost)
+        _posts.push(newPost)
         nextPostId++
     }
 
     const findPostIndex = function(postID){
-        for(let i=0;i<posts.length;i++){
-            if(posts[i].id == postID){
+        for(let i=0;i<_posts.length;i++){
+            if(_posts[i].id == postID){
                 return i
             }
         }
@@ -48,22 +48,22 @@ const Tweeter = function(){
 
     const removePost = function(postID){
         let index = findPostIndex(postID)
-        commentIdCounter-=posts[index].comments.length
-        posts.splice(index,1)
+        commentIdCounter-=_posts[index].comments.length
+        _posts.splice(index,1)
         postIdCounter--
     }
 
     const addComment = function(text,postId){
         let newComment = {id:"c" + nextCommentId, text: text}
         let index = findPostIndex(postId)
-        posts[index].comments.push(newComment) 
+        _posts[index].comments.push(newComment) 
         commentIdCounter++
         nextCommentId++
     }
 
     const removeComment = function(postID,commentID){
         let i = findPostIndex(postID)
-        let comments = posts[i].comments
+        let comments = _posts[i].comments
         for(let j=0;j<comments.length;j++){
             if(comments[j].id == commentID){
                 comments.splice(j,1)
